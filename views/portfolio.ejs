@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Portfolio</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/stocks">Stocks</a></li>
+          <li><a href="/portfolio">My Portfolio</a></li>
+          <li><a href="/transactions">Transactions</a></li>
+          <li><a href="/funds">Manage Funds</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>My Portfolio</h1>
+      <table>
+        <thead>
+          <tr>
+            <th>Stock Ticker</th>
+            <th>Quantity</th>
+            <th>Purchase Price</th>
+            <th>Current Price</th>
+            <th>Unrealized Gain/Loss</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (portfolio && portfolio.stocks) { %> <%
+          portfolio.stocks.forEach(stock => { %>
+          <tr>
+            <td><%= stock.ticker %></td>
+            <td><%= stock.quantity %></td>
+            <td>$<%= stock.priceAtPurchase.toFixed(2) %></td>
+            <td>$<%= stock.currentPrice.toFixed(2) %></td>
+            <td>
+              $<%= ((stock.currentPrice - stock.priceAtPurchase) *
+              stock.quantity).toFixed(2) %>
+            </td>
+          </tr>
+          <% }) %> <% } else { %>
+          <tr>
+            <td colspan="5">Your portfolio is empty.</td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Stock Trading System. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
+
+## code not working due to lines 36 - 52. NEED to fix

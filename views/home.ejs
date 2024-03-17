@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Trading Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/stocks">Stocks</a></li>
+                <li><a href="/portfolio">My Portfolio</a></li>
+                <li><a href="/transactions">Transactions</a></li>
+                <li><a href="/funds">Manage Funds</a></li>
+                <li><a href="/login">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="welcome">
+            <h1>Welcome to  IFT401</h1>
+            <p>Stay on top of your investments and make informed decisions.</p>
+        </section>
+        <section id="quick-links">
+            <h2>Quick Links</h2>
+            <div class="links">
+                <a href="/buy">Buy Stocks</a>
+                <a href="/sell">Sell Stocks</a>
+                <a href="/portfolio">View Portfolio</a>
+                <a href="/transactions">Transaction History</a>
+            </div>
+        </section>
+        <section id="market-summary">
+            <h2>Market Summary</h2>
+            <p>Here's a quick overview of today's market dynamics.</p>
+            <!-- Market data goes here OPTIONAL -->
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Stock Trading System. All rights reserved.</p>
+    </footer>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 1rem 0;
+        }
+        nav {
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav ul li:last-child {
+            margin-right: 0;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        main {
+            padding: 20px;
+        }
+        .links a {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .links a:hover {
+            background-color: #0056b3;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            
+        }
+    </style>
+</body>
+</html>

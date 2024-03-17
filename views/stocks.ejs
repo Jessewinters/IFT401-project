@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Available Stocks</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/stocks">Stocks</a></li>
+          <li><a href="/portfolio">My Portfolio</a></li>
+          <li><a href="/transactions">Transactions</a></li>
+          <li><a href="/funds">Manage Funds</a></li>
+          <li><a href="/login">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Trade Stocks</h1>
+      <section id="stock-search">
+        <input
+          type="text"
+          id="stockSearchInput"
+          placeholder="Search stocks..."
+        />
+        <!-- Implement search functionality with JavaScript -->
+      </section>
+
+      <section id="stock-list">
+        <table>
+          <thead>
+            <tr>
+              <th>Company Name</th>
+              <th>Stock Ticker</th>
+              <th>Price</th>
+              <th>High</th>
+              <th>Low</th>
+              <th>Opening Price</th>
+              <th>Market Cap</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% stocks.forEach(function(stock) { %>
+            <tr>
+              <td><%= stock.companyName %></td>
+              <td><%= stock.ticker %></td>
+              <td>$<%= stock.price %></td>
+              <!-- Other columns -->
+              <td>
+                <form action="/buy" method="POST" style="display: inline">
+                  <input
+                    type="hidden"
+                    name="ticker"
+                    value="<%= stock.ticker %>"
+                  />
+                  <input
+                    type="hidden"
+                    name="price"
+                    value="<%= stock.price %>"
+                  />
+                  <input
+                    type="number"
+                    name="quantity"
+                    min="1"
+                    value="1"
+                    required
+                  />
+                  <button type="submit">Buy</button>
+                </form>
+                <form action="/sell" method="POST" style="display: inline">
+                  <input
+                    type="hidden"
+                    name="ticker"
+                    value="<%= stock.ticker %>"
+                  />
+                  <input
+                    type="number"
+                    name="quantity"
+                    min="1"
+                    value="1"
+                    required
+                  />
+                  <button type="submit">Sell</button>
+                </form>
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Stock Trading System. All rights reserved.</p>
+    </footer>
+
+    <!-- Styles remain unchanged -->
+  </body>
+</html>
